@@ -1,5 +1,4 @@
 import { DateTime } from './luxon.js';
-
 const dateDisplay = document.querySelector('.date');
 const setTime = () => {
   const now = DateTime.now();
