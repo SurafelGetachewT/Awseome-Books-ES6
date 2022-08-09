@@ -1,3 +1,5 @@
+import { DateTime } from './luxon.js';
+
 const listBtn = document.querySelector('#listBtn');
 const addNewBtn = document.querySelector('#addNewBtn');
 const contactBtn = document.querySelector('#contactBtn');
@@ -32,3 +34,12 @@ contactBtn.addEventListener('click', () => {
   addNewSec.style.display = 'none';
   contactSec.style.display = 'flex';
 });
+
+const dateDisplay = document.querySelector('.date');
+const setTime = () => {
+  const now = DateTime.now();
+  const date = now.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+  dateDisplay.textContent = date;
+};
+
+setInterval(setTime, 1000);
